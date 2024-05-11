@@ -1,0 +1,101 @@
+body {
+  background: linear-gradient(to bottom, rgb(34, 32, 37), rgb(0, 0, 0));
+  margin: 0;
+}
+.nav-100{
+  background: linear-gradient(to right, rgb(116, 129, 252), rgb(0, 0, 0));
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+
+}
+.nav-menu {
+  background: linear-gradient(to bottom, rgb(116, 129, 252), rgb(24, 23, 23));
+  height: 50px;
+  width: 180px;
+  position: fixed;
+  left: 0;
+  z-index: 4;
+  transition: height 0.3s ease;
+  overflow: hidden;
+  border-radius: 0 0 70px 0;
+}
+
+.menu-content {
+  padding-top: 50px; /* Ajuste o espaçamento para evitar sobreposição com o ícone */
+}
+
+.nav-menu.nav-open {
+  height: 40vh; /* Expande a altura quando o menu está aberto */
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: none;
+}
+
+.nav-menu li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-family: 'Days One', sans-serif;
+}
+
+.nav-menu img {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+#home-icon {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+#close-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.nav-menu.nav-open .nav-item {
+  display: block;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.home-inicio img {
+  width: 100%;
+  height: 70vh;
+}
+
+.perfil{
+  position: absolute;
+  right: 10px;
+  border-radius: 50%;
+  top: 5px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Livro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card-cadastrar-livro">
+      <div class="card-novaConta">
+        <h2 class="cadastrar-livro">Cadastrar Livro</h2>
+        <form id="livroForm">
+          <div class="form-group-CL">
+            <input type="text" name="nome_livro" placeholder="Nome do Livro" required />
+            <label class="form-label-CL">Nome livro</label>
+          </div>
+          <div class="form-group-CL">
+            <input type="text" name="autor" placeholder="Autor" required />
+            <label class="form-label-CL">autor</label>
+          </div>
+          <div class="form-group-CL">
+            <input type="text" name="categoria" placeholder="Categoria" required />
+            <label class="form-label-CL">Categoria</label>
+          </div>
+          <div class="form-group-CL">
+            <input type="text" name="foto_capa" placeholder="URL da Capa" required />
+            <label class="form-label-CL">URL da capa</label>
+          </div>
+          <div class="form-group-CL">
+            <input class="descricao" type="text" name="descricao" placeholder="Descrição" required />
+            <label class="form-label-CL">descrição</label>
+          </div>
+          <div>
+            <button type="button" onclick="cadastrarLivro()">Salvar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/script-cadastrar-livro.js"></script>
+</body>
+</html>
+
+
+
+
+

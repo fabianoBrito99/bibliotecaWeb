@@ -1,0 +1,46 @@
+.InputContainer {
+  position: relative;
+  top:5px;
+  margin-left: auto;
+  margin-right: 70px;
+  width: 530px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom,rgb(227, 213, 255),rgb(255, 231, 231));
+  border-radius: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+  z-index: 4;
+}
+
+.input {
+  width: 500px;
+  height: 40px;
+  border: none;
+  outline: none;
+  caret-color: rgb(255, 81, 0);
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  padding-left: 15px;
+  letter-spacing: 0.8px;
+  color: rgb(19, 19, 19);
+  font-size: 13.4px;
+}
+.icon {
+  position: absolute;
+  right: 1.5rem;
+  fill: #5e083a;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+ }
+ .input:focus, .input:hover {
+  outline: none;
+  border-color: rgba(221, 126, 208, 0.664);
+  background: linear-gradient(to bottom,rgb(101, 24, 255),rgb(255, 231, 231));
+  box-shadow: 0 0 0 4px rgba(28, 2, 46, 0.1);
+
+ }

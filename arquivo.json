@@ -1,0 +1,110 @@
+{
+  "livros": [
+    {
+      "id": 1,
+      "nome": "O Peregrino",
+      "autor": "John Bunyan",
+      "foto_capa": "./capas-livro/O-peregrino-2.jpg"
+    },
+    {
+      "id": 2,
+      "nome": "Em Busca de Deus",
+      "autor": "A.W. Tozer",
+      "foto_capa": "./capas-livro/em-busca-de-deus.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Mere Christianity",
+      "autor": "C.S. Lewis",
+      "foto_capa": "./capas-livro/mere.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "O Evangelho Maltrapilho",
+      "autor": "Brennan Manning",
+      "foto_capa": "./capas-livro/O-evangelho-maltrapilho.png"
+    },
+    {
+      "id": 5,
+      "nome": "A Cabana",
+      "autor": "William P. Young",
+      "foto_capa": "/capas-livro/a-cabana.webp"
+    },
+    {
+      "id": 6,
+      "nome": "Uma Vida Com Propósitos",
+      "autor": "Rick Warren",
+      "foto_capa": "https://example.com/capas/uma_vida_com_propositos.jpg"
+    },
+    {
+      "id": 7,
+      "nome": "A Cruz e o Punhal",
+      "autor": "David Wilkerson",
+      "foto_capa": "./capas-livro/a-cruz-e-o-punhal.download"
+    },
+    {
+      "id": 8,
+      "nome": "A Prática do Poder da Presença de Deus",
+      "autor": "Brother Lawrence",
+      "foto_capa": "./capas-livro/download-a-pratica-da-presenca-de-deus-.jpg"
+    },
+    {
+      "id": 9,
+      "nome": "O Poder da Mulher que Ora",
+      "autor": "Stormie Omartian",
+      "foto_capa": "./capas-livro/o-poder-da-mulher.jpg"
+    },
+    {
+      "id": 10,
+      "nome": "O Homem Eterno",
+      "autor": "G.K. Chesterton",
+      "foto_capa": "./capas-livro/homem-eterno.jpg"
+    },
+  
+    {
+      "id": 12,
+      "nome": "O Peregrino da Alvorada",
+      "autor": "C.S. Lewis",
+      "foto_capa": "./capas-livro/Peregrino-da-Alvorada.png"
+    },
+ 
+    {
+      "id": 14,
+      "nome": "Deus no Banco dos Réus",
+      "autor": "Oswald Chambers",
+      "foto_capa": "./capas-livro/Deus no Banco dos Réus.webp"
+    },
+    {
+      "id": 15,
+      "nome": "O Fator Melquisedeque",
+      "autor": "Don Richardson",
+      "foto_capa": "./capas-livro/O-evangelho-maltrapilho.png"
+    },
+    {
+      "id": 16,
+      "nome": "O Dom Supremo",
+      "autor": "Henry Drummond",
+      "foto_capa": ""
+    },
+    {
+      "id": 17,
+      "nome": "A Resolução de Toda Mulher",
+      "autor": "Priscilla Shirer",
+      "foto_capa": "./capas-livro/A Resolução de Toda Mulher.jpg"
+    },
+
+
+    {
+      "id": 18,
+      "nome": "O Código Jesus",
+      "autor": "Adrian Rogers",
+      "foto_capa": "https://example.com/capas/o_codigo_jesus.jpg"
+    },
+    {
+      "id": 19,
+      "nome": "Redescobrindo Jesus",
+      "autor": "Matthew Kelly",
+      "foto_capa": "https://example.com/capas/redescobrindo_jesus.jpg"
+    }
+  ]
+}

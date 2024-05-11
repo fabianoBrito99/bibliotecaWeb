@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card1-login">
+      <div class="card-login">
+        <h2 class="login">Login</h2>
+        <div class="form-group-login">
+          <input type="email" name="email" placeholder="Email ou login" required />
+          <label class="form-label-login">Email ou login</label>
+        </div>
+        <div class="form-group-login">
+          <input type="password" name="senha" placeholder="Senha" required />
+          <label class="form-label-login">Senha</label>
+        </div>
+        <button id="botao-entrar" class="botao" type="submit">Entrar</button>
+        <input type="checkbox" />
+        <p class="salvar_login">salvar login?</p>
+        <a class="senha" href="">Esqueceu Senha</a>
+      </div>
+      <p class="nao_tem_conta">Não tem uma conta? <a href="#" class="criar-conta">criar conta</a>
+      </p>
+      <span class="ou-login">ou</span>
+
+      <p class="google-login">faça login com</p>
+      <div class="login-google-1">
+        <a href=""><img src="./img/google.png" alt="" width="20px" height="20px"></a>
+        <a href=""><img src="./img/facebook.png" alt="" width="20px" height="20px"></a>
+      </div>
+    </div>
+
+    <div class="card-criar hidden">
+      <div class="card-novaConta">
+        <h2 class="nova-conta">Nova conta</h2>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email ou login" required />
+          <label class="form-label">Email ou login</label>
+        </div>
+        <div class="form-group">
+          <input type="password" name="senha" placeholder="Senha" required />
+          <label class="form-label">Senha</label>
+        </div>
+        <div class="form-group">
+          <input type="password" name="senha" placeholder="Confirme a Senha" required />
+          <label class="form-label">Confirme a Senha</label>
+        </div>
+        <button id="botao-criar-conta" class="botao-criar" type="submit">Criar conta</button>
+        <p class="tem_conta">Já tem uma conta? <a href="./index.html" class="criar-conta">Login</a></p>
+        <p class="conta_com">Criar conta com</p>
+        <span class="ou">ou</span>
+        <div class="login-google">
+          <a href=""><img src="./img/google.png" alt="" width="20px" height="20px"></a>
+          <a href=""><img src="./img/facebook.png" alt="" width="20px" height="20px"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const criarContaLink = document.querySelector(".criar-conta");
+      criarContaLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        toggleCards();
+      });
+    });
+
+    function toggleCards() {
+      const cardLogin = document.querySelector(".card-login");
+      const cardCriarConta = document.querySelector(".card-criar");
+
+      cardLogin.classList.toggle("hidden");
+      cardCriarConta.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
