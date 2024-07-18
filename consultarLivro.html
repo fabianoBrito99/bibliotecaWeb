@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Livro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container-consLiv">
+    <div class="grid">
+      <div>
+         <img id="livro-capa" src="" alt="">
+      </div>
+      <div class="livro-info">
+        <h1 id="livro-nome">Nome do Livro</h1>
+        <h2 id="livro-autor">Autor</h2>
+        <h2 id="livro-categoria">Categoria</h2>
+        <h6 id="livro-descricao" class="descricao"></h6>
+        <div class="botao-reservar-pos">
+          <button class="botao-reservar">Reservar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const livroId = urlParams.get('id');
+
+      if (livroId) {
+        fetch(`http://localhost:4000/livro/${livroId}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json();
+          })
+          .then(data => {
+            if (data.erro) {
+              alert(data.erro);
+              return;
+            }
+            document.getElementById('livro-capa').src = data.foto_capa;
+            document.getElementById('livro-nome').textContent = data.nome_livro;
+            document.getElementById('livro-descricao').textContent = data.descricao;
+            document.getElementById('livro-autor').textContent = `Autor: ${data.autor}`;
+            document.getElementById('livro-categoria').textContent = `Categoria: ${data.categoria}`;
+            document.getElementById('livro-status').textContent = `Status: ${data.status}`;
+          })
+          .catch(error => {
+            console.error('Erro ao buscar dados do livro:', error);
+            alert('Erro ao buscar dados do livro: ' + error.message);
+          });
+      } else {
+        alert('ID do livro não fornecido na URL.');
+      }
+    });
+  </script>
+</body>
+</html>

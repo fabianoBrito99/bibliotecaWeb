@@ -8,44 +8,44 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="card-cadastrar-livro">
-      <div class="card-novaConta">
-        <h2 class="cadastrar-livro">Cadastrar Livro</h2>
-        <form id="livroForm">
-          <div class="form-group-CL">
-            <input type="text" name="nome_livro" placeholder="Nome do Livro" required />
-            <label class="form-label-CL">Nome livro</label>
+  <div class="container-cl">
+    <div class="card-novaConta">
+      <h2 class="cadastrar-livro">Cadastrar Livro</h2>
+      <form id="livroForm">
+        <div class="grid-cl">
+          <div class="form-inputs">
+            <div class="form-group-CL">
+              <input type="text" name="nome_livro" placeholder="Nome do Livro" required />
+              <label class="form-label-CL">Nome do Livro</label>
+            </div>
+            <div class="form-group-CL">
+              <input type="text" name="autor" placeholder="Autor" required />
+              <label class="form-label-CL">Autor</label>
+            </div>
+            <div class="form-group-CL">
+              <input type="text" name="categoria" placeholder="Categoria" required />
+              <label class="form-label-CL">Categoria</label>
+            </div>
+            <div class="form-group-CL">
+              <input class="descricao" type="text" name="descricao" placeholder="Descrição" required />
+              <label class="form-label-CL">Descrição</label>
+            </div>
           </div>
-          <div class="form-group-CL">
-            <input type="text" name="autor" placeholder="Autor" required />
-            <label class="form-label-CL">autor</label>
+          <div class="form-media">
+            <h2>Imagem da capa do livro</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+              <input type="file" name="imagem_capa" id="imagem_capa">
+              <br><br>
+              <input class="botao-enviar-img" type="submit" value="Enviar Imagem">
+            </form>
+            <div class="form-group-CL">
+              <button class="botao" type="submit">Salvar</button>
+            </div>
           </div>
-          <div class="form-group-CL">
-            <input type="text" name="categoria" placeholder="Categoria" required />
-            <label class="form-label-CL">Categoria</label>
-          </div>
-          <div class="form-group-CL">
-            <input type="text" name="foto_capa" placeholder="URL da Capa" required />
-            <label class="form-label-CL">URL da capa</label>
-          </div>
-          <div class="form-group-CL">
-            <input class="descricao" type="text" name="descricao" placeholder="Descrição" required />
-            <label class="form-label-CL">descrição</label>
-          </div>
-          <div>
-            <button type="button" onclick="cadastrarLivro()">Salvar</button>
-          </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
-
   <script src="./js/script-cadastrar-livro.js"></script>
 </body>
 </html>
-
-
-
-
-

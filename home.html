@@ -1,38 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
-  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css'><link rel="stylesheet" href="./css/style.css">
-
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-
-
-
-
-
-
-
+  <!-- partial:index.partial.html -->
   <div class="container-home">
     <nav class="nav-menu">
-     
       <div class="nav-100">
         <img class="perfil" src="./img/perfil.jpg" alt="" width="40px" height="40px">
-
-        <div class="InputContainer">
+        <div class="InputContainer1">
           <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
           <input placeholder="  Pesquisar.." id="input" class="input" name="text" type="text">
-          
         </div>
       </div>
       <ul>
-       <li><img id="home-icon" src="./img/home.png" alt="Home" width="30" height="30">
-       </li>
- 
-
+        <li><img id="home-icon" src="./img/home.png" alt="Home" width="30" height="30"></li>
         <div class="menu-content">
           <li class="nav-item"><img src="./img/users.png" alt="" width="20" height="20"> Usuários</li>
           <li class="nav-item"><img src="./img/user.png" alt="" width="20" height="20"> Cadastrar Usuário</li>
@@ -44,14 +30,6 @@
       </ul>
       <button id="close-menu"></button>
     </nav>
-    
-
-  
-
-
-
-
-
 
     <section class="section">
       <div class="swiper">
@@ -67,47 +45,42 @@
             </div>
           </div>
           <div class="swiper-slide swiper-slide--two">
-            <span>reflexivo</span>
+            <span>Reflexivo</span>
             <div class="nome_livro">
-              <h2>o Deus que destroi sonhos</h2>
+              <h2>O Deus que Destroi Sonhos</h2>
               <p>
                 <img class="img" src="../img/escritor.png" alt="">
                 Rodrigo Bibo
               </p>
             </div>
           </div>
-    
           <div class="swiper-slide swiper-slide--three">
-            <span>devocional</span>
-            <div  class="nome_livro" >
+            <span>Devocional</span>
+            <div class="nome_livro">
               <h2>Forte</h2>
               <p>
                 <img class="img" src="../img/escritor.png" alt="">
-                lisa bevere
+                Lisa Bevere
               </p>
             </div>
           </div>
-    
           <div class="swiper-slide swiper-slide--four">
-            <span>reflexivo</span>
+            <span>Reflexivo</span>
             <div class="nome_livro">
-              <h2>comprados com sangue</h2>
+              <h2>Comprados com Sangue</h2>
               <p>
                 <img class="img" src="../img/escritor.png" alt="">
                 Derek Prince
               </p>
             </div>
           </div>
-    
           <div class="swiper-slide swiper-slide--five">
-            <span>reflexivo</span>
+            <span>Reflexivo</span>
             <div class="nome_livro">
-              <h2>O Deus (in)visivel</h2>
+              <h2>O Deus (In)visível</h2>
               <p>
-    
                 <img class="img" src="../img/escritor.png" alt="">
                 Philip Yancey
-               
               </p>
             </div>
           </div>
@@ -118,27 +91,26 @@
     </section>
     <!-- partial -->
 
-
     <div class="livros-container" id="livros-container">
-
       <h3>Devocional</h3>
       <div id="devocional-container" class="livros-categoria">
         <!-- Aqui serão inseridos os cards de livros devocionais -->
       </div>
-      <button class="botao-direita" id="btn-prev-devocional">></button>
-      <button class="botao-esquerda" id="btn-next-devocional"><</button>
+      <button class="botao-direita" id="btn-prev-devocional">&lt;</button>
+      <button class="botao-esquerda" id="btn-next-devocional">&gt;</button>
 
       <h3>Reflexivo</h3>
       <div id="reflexivo-container" class="livros-categoria">
         <!-- Aqui serão inseridos os cards de livros reflexivos -->
       </div>
-      <button  class="botao-direita1" id="btn-prev-reflexivo">></button>
-      <button  class="botao-esquerda1" id="btn-next-reflexivo"><</button>
+      <button class="botao-direita1" id="btn-prev-reflexivo">&lt;</button>
+      <button class="botao-esquerda1" id="btn-next-reflexivo">&gt;</button>
     </div>
 
-
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js'></script><script  src="./js/carrosel.js"></script>
-    <script src="./js/script-teste.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+    <script src="./js/carrosel.js"></script>
+    <script src="./js/scrpt-teste2.js"></script>
     <script src="./js/script-home.js"></script>
+  </div>
 </body>
 </html>

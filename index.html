@@ -18,7 +18,7 @@
 
 <body>
   <div class="container">
-    <div class="card1-login">
+    <div class="card-tela-login">
       <div class="card-login">
         <h2 class="login">Login</h2>
         <div class="form-group-login">
@@ -38,7 +38,7 @@
       </p>
       <span class="ou-login">ou</span>
 
-      <p class="google-login">faça login com</p>
+      <p class="faca-login">faça login com</p>
       <div class="login-google-1">
         <a href=""><img src="./img/google.png" alt="" width="20px" height="20px"></a>
         <a href=""><img src="./img/facebook.png" alt="" width="20px" height="20px"></a>
@@ -46,8 +46,8 @@
     </div>
 
     <div class="card-criar hidden">
-      <div class="card-novaConta">
-        <h2 class="nova-conta">Nova conta</h2>
+      <div class="card-login">
+        <h2 class="login">Nova Conta</h2>
         <div class="form-group">
           <input type="email" name="email" placeholder="Email ou login" required />
           <label class="form-label">Email ou login</label>
@@ -57,16 +57,23 @@
           <label class="form-label">Senha</label>
         </div>
         <div class="form-group">
-          <input type="password" name="senha" placeholder="Confirme a Senha" required />
-          <label class="form-label">Confirme a Senha</label>
+          <input type="password" name="senha" placeholder="Senha" required />
+          <label class="form-label">Confirme Senha</label>
         </div>
-        <button id="botao-criar-conta" class="botao-criar" type="submit">Criar conta</button>
-        <p class="tem_conta">Já tem uma conta? <a href="./index.html" class="criar-conta">Login</a></p>
-        <p class="conta_com">Criar conta com</p>
-        <span class="ou">ou</span>
-        <div class="login-google">
-          <a href=""><img src="./img/google.png" alt="" width="20px" height="20px"></a>
-          <a href=""><img src="./img/facebook.png" alt="" width="20px" height="20px"></a>
+        <button id="botao-entrar" class="botao" type="submit">Criar Conta</button>
+        <input class="check" type="checkbox" />
+        <p class="salvar_login">salvar login?</p>
+      </div>
+      <p class="nao_tem_conta">já tem uma conta? <a href="./index.html" class="criar-conta">Logar</a>
+      </p>
+      <span class="ou-login">ou</span>
+
+      <p class="faca-login">criar conta com</p>
+      <div class="nova-google">
+        <a href=""><img src="./img/google.png" alt="" width="20px" height="20px"></a>
+        <a href=""><img src="./img/facebook.png" alt="" width="20px" height="20px"></a>
+      </div>
+      </div>
         </div>
       </div>
     </div>
@@ -75,14 +82,21 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const criarContaLink = document.querySelector(".criar-conta");
+      const logarLink = document.querySelector(".logar");
+
       criarContaLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        toggleCards();
+      });
+
+      logarLink.addEventListener("click", function(event) {
         event.preventDefault();
         toggleCards();
       });
     });
 
     function toggleCards() {
-      const cardLogin = document.querySelector(".card-login");
+      const cardLogin = document.querySelector(".card-tela-login");
       const cardCriarConta = document.querySelector(".card-criar");
 
       cardLogin.classList.toggle("hidden");

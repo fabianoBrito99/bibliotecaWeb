@@ -1,75 +1,129 @@
-.card-cadastrar-livro {
-  background: rgba(255, 255, 255, 0.5); 
-  backdrop-filter: blur(2px);
-  background: transparent;
-  overflow: hidden; 
-  max-width: 700px; 
+.container-cl {
+  background:linear-gradient(to bottom, rgba(0, 57, 243, 0.507), rgba(136, 138, 255, 0.856));
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card-novaConta {
+  background: rgba(47, 47, 56, 0.137); 
+  backdrop-filter: blur(2000px);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(207, 204, 204, 0.5);
+  max-width: 800px;
   width: 100%;
-  top: 99px;
-  position: absolute;
-  height: 600px;
 }
 
-input{
-  caret-color: rgb(255, 81, 0);
+.grid-cl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-
+.form-inputs, .form-media {
+  display: flex;
+  flex-direction: column;
+}
 
 .form-group-CL {
   position: relative;
-  margin: 3px 0;
+  margin: 10px 0;
 }
+
 .form-group-CL input {
-  margin-left: -10px;
-  font-size: 10px;
+  font-size: 14px;
   border-radius: 5px;
   border: #acacac solid 1px;
   color: #eee;
-  width: 300px;
-  caret-color: transparent; 
+  width: 100%;
+  padding: 10px;
+  background: transparent;
 }
+
 .form-label-CL {
   position: absolute;
-  left: 0px;
-  top: 10px;
-  font-size: 10px;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
   color: #acacac;
   pointer-events: none;
   transition: 0.15s all ease;
 }
 
 .form-group-CL input::placeholder {
-  color: transparent; 
+  color: transparent;
 }
 
 .form-group-CL input:focus ~ .form-label-CL,
 .form-group-CL input:not(:placeholder-shown) ~ .form-label-CL {
-  transform: translateY(-18px);
-  font-size: 10px;
-  color: #fff; 
-  background-color: #463636;
+  top: -10px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #2c2c2c;
+  padding: 0 5px;
 }
 
-
-
-
-input[type="text"]{
-  width: 100%;
-  padding:60px 0px 90px;
-  padding-top: 10px;
-  padding-bottom: 0px;
+input[type="text"] {
   margin-bottom: 5px;
-  backdrop-filter: blur(2px);
-  background: transparent;
-  cursor: pointer;
-  border-bottom: 1.5px solid #ffffff;
-  font-size: 1.5rem;
-}
-.descricao{
-  height: 200px;
 }
 
-.cadastrar-livro{
-  color: tomato;
+.descricao {
+  height: 100px;
+}
+
+.cadastrar-livro {
+  color: #2420f0;
+  text-shadow: 1px 1px 0 #031891, -1px 1px 0 #002fff, 1px -1px 0 #eeff00, -1px -1px 0 #07c026;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.botao {
+  background-color: #2420f0;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+  background-color: #031891;
+}
+
+.form-media h2 {
+  margin-bottom: 10px;
+}
+.form-media h2{
+  color: #fcfcfc;
+}
+
+form#uploadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.botao-enviar-img{
+  margin-left: 0;
+  width: 90%;
+  background-image:linear-gradient(to left, #4163fa, #00ffc8, #00ffc8,#4163fa);
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 5px;
+  
+}
+
+.botao-enviar-img:hover {
+  background-image:linear-gradient(to left, #00ffc8, #2f44fa, #2f44fa,#00ffc8);
+  color: white;
 }

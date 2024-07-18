@@ -1,5 +1,6 @@
 @import "../css/global/global.css";
 @import "./login/login.css";
+@import "./login/nova_conta.css";
 
 @import "../css/home/home.css";
 @import "../css/home/livro.css";
@@ -9,5 +10,7 @@
 
 
 
-
 @import "../css/cadastrar-livro/cadastrarLivro.css";
+@import "../css/cadastrar-livro/imagem.css";
+
+@import "../css/consultar-livro/consultar-livro.css"

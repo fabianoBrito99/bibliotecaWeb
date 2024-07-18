@@ -1,19 +1,7 @@
 
-.container {
-  background:linear-gradient(to bottom, rgba(21, 75, 253, 0.507), rgba(136, 138, 255, 0.568));
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  position: relative;
-}
-
-
-.card-tela-login {
-  background: rgba(9, 6, 240, 0.137); 
-  backdrop-filter: blur(2000px);
+.card-tela {
+  background: rgba(226, 12, 12, 0.959); 
+  backdrop-filter: blur(2px);
   background: transparent;
   overflow: hidden; 
   max-width: 200px; 
@@ -22,7 +10,6 @@
   position: absolute;
   height: 300px;
   border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(250, 250, 250, 0.1);
 }
 
 
@@ -36,17 +23,18 @@ button {
   border-radius: 5px;
 }
 
-.form-group-login input[type="email"],
-.form-group-login input[type="password"]{
+.form-group input[type="email"],
+.form-group input[type="password"]{
   width: 80%;
   padding: 20px 0 0 20px;
   padding-bottom: 0px;
   margin-bottom: 5px;
   backdrop-filter: blur(2px);
   background: transparent;
+  margin-left: 5px;
 }
  
-.card-login :not(h6), .botao {
+.card :not(h6), .botao {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,16 +43,40 @@ button {
   margin-top: 5px;
 }
 
-.card-tela-login :not(h2){
+.card-tela :not(h2){
   margin-left: 8px;
 }
 
+.login {
+  color: #2420f0;
+  text-shadow: 
+    1px 1px 0 #031891,
+    -1px 1px 0 #002fff,
+    1px -1px 0 #eeff00,
+    -1px -1px 0 #07c026;
+}
+
+.botao {
+  margin-left: 0;
+  width: 90%;
+  background-image:linear-gradient(to left, #4163fa, #001aff, #001aff,#4163fa);
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  
+}
 
 .grid button{
   padding: 0px;
   display: flex;
  
 }
+
+.botao:hover {
+  background-image:linear-gradient(to left, #051352, #6270ee, #5f6ef1,#001aff);
+}
+
 p{
   position: absolute;
   bottom: 41px;
@@ -85,7 +97,7 @@ p{
 .card-criar {
 
   background: rgba(238, 57, 57, 0.582); 
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(2000px);
   background: transparent;
   overflow: hidden; 
   max-width: 200px; 
@@ -93,47 +105,48 @@ p{
   top: 99px;
   position: absolute;
   height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(250, 250, 250, 0.1);
 }
 
 
-.login-google-1{
-  position: absolute;
+.nova-google{
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0px;
-  gap: 10px;
+  bottom: -85px;
+  gap: 1px;
   cursor: pointer;
+  left: 70px;
 }
 
-.form-group-login {
+.form-group {
   position: relative;
   margin: 3px 0;
 }
-.form-group-login input {
-  margin-left: -15px;
+.form-group input {
+  margin-left: -20px;
   font-size: 10px;
   border-radius: 5px;
   border: #acacac solid 1px;
   color: #eee;
   caret-color: transparent; 
 }
-.form-label-login {
+.form-label {
   position: absolute;
   top: 10px;
   font-size: 10px;
   color: #acacac;
-  left: 10px;
+  left: 28px;
   pointer-events: none;
   transition: 0.15s all ease;
 }
 
-.form-group-login input::placeholder {
+.form-group input::placeholder {
   color: transparent; 
 }
 
-.form-group-login input:focus ~ .form-label-login,
-.form-group-login input:not(:placeholder-shown) ~ .form-label-login {
+.form-group input:focus ~ .form-label-login,
+.form-group input:not(:placeholder-shown) ~ .form-label {
   transform: translateY(-18px);
   font-size: 10px;
   color: #fff; 
@@ -142,6 +155,13 @@ p{
 .salvar_login{
   display: flex;
   bottom: 108px;
+  margin-left: 10px;
+}
+.check{
+  display: flex;
+  bottom: 108px;
+  margin-left: 15px;
+
 }
 .senha{
   display: flex;
@@ -158,22 +178,13 @@ p{
  
 
 }
-.login-google-1{
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0px;
-  gap: 1px;
-  cursor: pointer;
-  left: 50px;
-}
-.faca-login {
+
+.faca {
   position: absolute;
   display: flex;
 
   bottom: 35px;
-  left: 57px;
+left: 57px;
   cursor: pointer;
 }
 

@@ -11,23 +11,23 @@ body {
 
 }
 .nav-menu {
-  background: linear-gradient(to bottom, rgb(116, 129, 252), rgb(24, 23, 23));
+  background: linear-gradient(to bottom, rgb(74, 92, 253), rgb(247, 85, 85));
   height: 50px;
   width: 180px;
   position: fixed;
   left: 0;
   z-index: 4;
-  transition: height 0.3s ease;
+  transition: height 0.5s ease;
   overflow: hidden;
   border-radius: 0 0 70px 0;
 }
 
 .menu-content {
-  padding-top: 50px; /* Ajuste o espaçamento para evitar sobreposição com o ícone */
+  padding-top: 50px; 
 }
 
 .nav-menu.nav-open {
-  height: 40vh; /* Expande a altura quando o menu está aberto */
+  height: 100vh;
 }
 
 .nav-menu ul {
@@ -52,7 +52,9 @@ body {
 }
 
 #home-icon {
-  margin-bottom: 20px;
+  position: relative;
+  top:10px;
+  margin-left: 5px;
   cursor: pointer;
 }
 
@@ -64,11 +66,17 @@ body {
   background: none;
   font-size: 20px;
   cursor: pointer;
-  color: white;
+  color: rgb(148, 5, 5);
+}
+.sair{
+  position: relative;
+  bottom: -45vh;
+
 }
 
 .nav-menu.nav-open .nav-item {
   display: block;
+  margin-left: 5px;
 }
 
 .card {

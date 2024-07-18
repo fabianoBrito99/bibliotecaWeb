@@ -2,6 +2,12 @@ async function cadastrarLivro() {
   const livroForm = document.getElementById('livroForm');
   const formData = new FormData(livroForm);
 
+  
+  if (!formData.get('nome_livro') || !formData.get('autor') || !formData.get('categoria') || !formData.get('foto_capa') || !formData.get('descricao')) {
+    alert('Por favor, preencha todos os campos obrigatórios.');
+    return;
+  }
+
   const livroData = {
     nome_livro: formData.get('nome_livro'),
     autor: formData.get('autor'),
