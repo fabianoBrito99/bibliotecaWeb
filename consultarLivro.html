@@ -19,7 +19,7 @@
         <h2 id="livro-categoria">Categoria</h2>
         <h6 id="livro-descricao" class="descricao"></h6>
         <div class="botao-reservar-pos">
-          <button class="botao-reservar">Reservar</button>
+          <button id="botao-reservar" class="botao-reservar">Reservar</button>
         </div>
       </div>
     </div>
@@ -43,12 +43,27 @@
               alert(data.erro);
               return;
             }
-            document.getElementById('livro-capa').src = data.foto_capa;
-            document.getElementById('livro-nome').textContent = data.nome_livro;
-            document.getElementById('livro-descricao').textContent = data.descricao;
-            document.getElementById('livro-autor').textContent = `Autor: ${data.autor}`;
-            document.getElementById('livro-categoria').textContent = `Categoria: ${data.categoria}`;
-            document.getElementById('livro-status').textContent = `Status: ${data.status}`;
+
+            const capa = document.getElementById('livro-capa');
+            const nome = document.getElementById('livro-nome');
+            const descricao = document.getElementById('livro-descricao');
+            const autor = document.getElementById('livro-autor');
+            const categoria = document.getElementById('livro-categoria');
+            const botaoReservar = document.getElementById('botao-reservar');
+
+            if (capa) capa.src = data.foto_capa;
+            if (nome) nome.textContent = data.nome_livro;
+            if (descricao) descricao.textContent = data.descricao;
+            if (autor) autor.textContent = `Autor: ${data.autor}`;
+            if (categoria) categoria.textContent = `Categoria: ${data.categoria}`;
+
+            if (data.status1 === 'reservado') {
+              botaoReservar.classList.add('botao-reservado');
+              botaoReservar.classList.remove('botao-reservar');
+              botaoReservar.textContent = 'Reservado';
+              botaoReservar.disabled = true;
+              botaoReservar.title = 'Este livro já está reservado.';
+            }
           })
           .catch(error => {
             console.error('Erro ao buscar dados do livro:', error);

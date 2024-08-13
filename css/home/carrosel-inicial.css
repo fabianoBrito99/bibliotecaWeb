@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-.section {
+.section-carrosel-inicial {
   position: relative;
   width: 100%;
   min-height: 70vh;
@@ -14,13 +14,13 @@
   overflow: hidden;
 }
 
-.swiper {
+.section-carrosel-inicial .swiper {
   width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
-.swiper-slide {
+.section-carrosel-inicial .swiper-slide {
   width: 300px;
   height: 400px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.486);
@@ -32,16 +32,16 @@
   align-items: self-start;
 }
 
-.swiper-slide-active {
+.section-carrosel-inicial .swiper-slide-active {
   filter: blur(0px);
 }
 
-.swiper-pagination-bullet,
-.swiper-pagination-bullet-active {
+.section-carrosel-inicial .swiper-pagination-bullet,
+.section-carrosel-inicial .swiper-pagination-bullet-active {
   background: #fff;
 }
 
-.swiper-slide span {
+.section-carrosel-inicial .swiper-slide span {
   text-transform: uppercase;
   position: absolute;
   bottom:  100px;
@@ -55,11 +55,11 @@
   font-family: "Open Sans", sans-serif;
 }
 
-.swiper-slide--one span {
+.section-carrosel-inicial .swiper-slide--one span {
   background: #62667f;
 }
 
-.swiper-slide--two span {
+.section-carrosel-inicial .swiper-slide--two span {
   background: #087ac4;
 }
 
@@ -132,10 +132,6 @@
 .swiper-3d .swiper-slide-shadow-right {
   background-image: none;
 }
-
-
-
-
 
 .nome_livro h2{
   position: absolute;

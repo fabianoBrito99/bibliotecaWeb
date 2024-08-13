@@ -1,150 +1,104 @@
-// testeando para quando clicar no livro ir para consulta
-
 document.addEventListener("DOMContentLoaded", async function () {
-  const livros = []; // Array de livros para carregar dinamicamente
-  const categorias = {
-    devocional: [],
-    reflexivo: [],
-  };
+  const categoriasSection = document.getElementById("categorias-section");
 
-  let currentPositionDevocional = 0;
-  let currentPositionReflexivo = 0;
-  let cardWidth = 0;
-  let maxScrollPositionDevocional = 0;
-  let maxScrollPositionReflexivo = 0;
+  // Fetch distinct categories
+  const categoriasData = await fetch("http://localhost:4000/categorias")
+    .then(response => response.json())
+    .catch(error => console.error("Erro ao carregar as categorias:", error));
 
-  // Simular dados de livros (substitua por sua lógica de busca)
-  const data = await fetch("http://localhost:4000/livro")
-    .then((response) => response.json())
-    .catch((error) => console.error("Erro ao carregar os livros:", error));
+  if (categoriasData && categoriasData.categorias) {
+    for (const categoria of categoriasData.categorias) {
+      const categoriaContainer = document.createElement("div");
+      categoriaContainer.classList.add("custom-swiper-container");
+      categoriaContainer.innerHTML = `
+        <h3 class="categoria">${categoria}</h3>
+        <div class="swiper custom-swiper mySwiper-${categoria}">
+          <div class="swiper-wrapper" id="${categoria}-container"></div>
+          <div class="swiper-pagination custom-swiper-pagination"></div>
+          <div class="swiper-button-next custom-swiper-button-next"></div>
+          <div class="swiper-button-prev custom-swiper-button-prev"></div>
+        </div>
+      `;
+      categoriasSection.appendChild(categoriaContainer);
+    }
 
-  if (data && data.dados) {
-    livros.push(...data.dados);
+    // Fetch books and distribute them into their respective categories
+    const livrosData = await fetch("http://localhost:4000/livro")
+      .then(response => response.json())
+      .catch(error => console.error("Erro ao carregar os livros:", error));
 
-    // Separar os livros em categorias
-    livros.forEach((livro) => {
-      if (livro.categoria === "devocional") {
-        categorias.devocional.push(livro);
-      } else if (livro.categoria === "reflexivo") {
-        categorias.reflexivo.push(livro);
-      }
-    });
-  }
+    if (livrosData && livrosData.dados) {
+      const livros = livrosData.dados;
 
-  // Função para criar o card de livro
-  function criarCardLivro(livro) {
-    const cardLivro = document.createElement("div");
-    cardLivro.classList.add("card-livro");
-    cardLivro.setAttribute("data-id", livro.id); // Adicionar data-id ao card
+      livros.forEach(livro => {
+        const container = document.getElementById(`${livro.categoria}-container`);
+        if (container) {
+          const cardLivro = criarCardLivro(livro);
+          const swiperSlide = document.createElement("div");
+          swiperSlide.classList.add("swiper-slide"); // Usar a classe personalizada
+          swiperSlide.appendChild(cardLivro);
+          container.appendChild(swiperSlide);
+        }
+      });
 
-    const img = document.createElement("img");
-    img.src = livro.foto_capa;
-    img.alt = livro.nome_livro;
-    cardLivro.appendChild(img);
-
-    const titulo = document.createElement("h2");
-    titulo.textContent = livro.nome_livro;
-    cardLivro.appendChild(titulo);
-
-    const autor = document.createElement("h6");
-    autor.textContent = `Autor: ${livro.autor}`;
-    cardLivro.appendChild(autor);
-
-    // Adicionar evento de clique ao card
-    cardLivro.addEventListener("click", () => {
-      const id = cardLivro.getAttribute("data-id");
-      window.location.href = `consultarLivro.html?id=${id}`;
-    });
-
-    return cardLivro;
-  }
-
-  // Função para exibir os livros em uma categoria
-  function exibirLivros(container, livros) {
-    container.innerHTML = ""; // Limpar o conteúdo existente
-
-    livros.forEach((livro) => {
-      const cardLivro = criarCardLivro(livro);
-      container.appendChild(cardLivro);
-    });
-
-    // Calcular a largura total dos cards
-    cardWidth = container.firstElementChild.offsetWidth;
-    const numCards = livros.length;
-    const containerWidth = container.offsetWidth;
-
-    // Máximo deslocamento permitido
-    const maxScrollPosition = Math.max(
-      0,
-      numCards * cardWidth - containerWidth
-    );
-
-    return maxScrollPosition;
-  }
-
-  // Exibir livros por categoria inicial
-  const devocionalContainer = document.getElementById("devocional-container");
-  const reflexivoContainer = document.getElementById("reflexivo-container");
-
-  if (devocionalContainer && reflexivoContainer) {
-    maxScrollPositionDevocional = exibirLivros(
-      devocionalContainer,
-      categorias.devocional
-    );
-    maxScrollPositionReflexivo = exibirLivros(
-      reflexivoContainer,
-      categorias.reflexivo
-    );
+      // Initialize Swiper instances for each category
+      categoriasData.categorias.forEach(categoria => {
+        new Swiper(`.mySwiper-${categoria}`, {
+          slidesPerView: 3,
+          spaceBetween: 1, // Ajuste o espaço entre os slides conforme necessário
+          navigation: {
+            nextEl: `.mySwiper-${categoria} .custom-swiper-button-next`,
+            prevEl: `.mySwiper-${categoria} .custom-swiper-button-prev`,
+          },
+          pagination: {
+            el: `.mySwiper-${categoria} .custom-swiper-pagination`,
+            clickable: true,
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 1, // Ajustar para telas menores
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 1, // Ajustar para telas médias
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 1, // Ajustar para telas maiores
+            },
+          },
+        });
+      });
+    } else {
+      console.error("Erro: Dados de livros não foram carregados corretamente.");
+    }
   } else {
-    console.error("Elementos de categoria não encontrados no DOM.");
-    return;
+    console.error("Erro: Dados de categorias não foram carregados corretamente.");
   }
-
-  // Eventos para navegação nos cards de devocional
-  document
-    .getElementById("btn-next-devocional")
-    .addEventListener("click", function () {
-      if (currentPositionDevocional < maxScrollPositionDevocional) {
-        currentPositionDevocional += cardWidth;
-        currentPositionDevocional = Math.min(
-          currentPositionDevocional,
-          maxScrollPositionDevocional
-        );
-        devocionalContainer.style.transform = `translateX(-${currentPositionDevocional}px)`;
-      }
-    });
-
-  document
-    .getElementById("btn-prev-devocional")
-    .addEventListener("click", function () {
-      if (currentPositionDevocional > 0) {
-        currentPositionDevocional -= cardWidth;
-        currentPositionDevocional = Math.max(currentPositionDevocional, 0);
-        devocionalContainer.style.transform = `translateX(-${currentPositionDevocional}px)`;
-      }
-    });
-
-  // Eventos para navegação nos cards de reflexivo
-  document
-    .getElementById("btn-next-reflexivo")
-    .addEventListener("click", function () {
-      if (currentPositionReflexivo < maxScrollPositionReflexivo) {
-        currentPositionReflexivo += cardWidth;
-        currentPositionReflexivo = Math.min(
-          currentPositionReflexivo,
-          maxScrollPositionReflexivo
-        );
-        reflexivoContainer.style.transform = `translateX(-${currentPositionReflexivo}px)`;
-      }
-    });
-
-  document
-    .getElementById("btn-prev-reflexivo")
-    .addEventListener("click", function () {
-      if (currentPositionReflexivo > 0) {
-        currentPositionReflexivo -= cardWidth;
-        currentPositionReflexivo = Math.max(currentPositionReflexivo, 0);
-        reflexivoContainer.style.transform = `translateX(-${currentPositionReflexivo}px)`;
-      }
-    });
 });
+
+function criarCardLivro(livro) {
+  const cardLivro = document.createElement("div");
+  cardLivro.classList.add("card-livro");
+  cardLivro.setAttribute("data-id", livro.id);
+
+  const img = document.createElement("img");
+  img.src = livro.foto_capa;
+  img.alt = livro.nome_livro;
+  cardLivro.appendChild(img);
+
+  const titulo = document.createElement("h2");
+  titulo.textContent = livro.nome_livro;
+  cardLivro.appendChild(titulo);
+
+  const autor = document.createElement("h6");
+  autor.textContent = `Autor: ${livro.autor}`;
+  cardLivro.appendChild(autor);
+
+  cardLivro.addEventListener("click", () => {
+    window.location.href = `consultarLivro.html?id=${livro.id}`;
+  });
+
+  return cardLivro;
+}

@@ -1,4 +1,3 @@
-//aqui anda tá faltando criar as outras funções, é só um teste
 const connection = require("../config/mysql.config");
 
 function show(request, response) {
@@ -8,7 +7,7 @@ function show(request, response) {
   }
   connection.query(
     "SELECT * FROM livros WHERE id = ?;",
-  [codigo],
+    [codigo],
     function (err, resultado) {
       if (err) {
         return response.json({ erro: "erro" });
@@ -20,6 +19,7 @@ function show(request, response) {
     }
   );
 }
+
 function list(request, response) {
   connection.query("SELECT * FROM livros", function (err, resultado) {
     if (err) {
@@ -28,6 +28,7 @@ function list(request, response) {
     return response.json({ dados: resultado });
   });
 }
+
 function create(request, response) {
   const { nome_livro, autor, foto_capa_url, categoria, descricao } = request.body;
 
@@ -48,4 +49,14 @@ function create(request, response) {
     }
   );
 }
-module.exports = { show, list, create };
+
+function listCategories(request, response) {
+  connection.query("SELECT DISTINCT categoria FROM livros", function (err, resultado) {
+    if (err) {
+      return response.json({ erro: "ocorreram erros ao buscar categorias" });
+    }
+    return response.json({ categorias: resultado.map(row => row.categoria) });
+  });
+}
+
+module.exports = { show, list, create, listCategories };

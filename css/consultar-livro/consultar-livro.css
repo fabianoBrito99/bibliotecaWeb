@@ -62,3 +62,13 @@
   background-image: linear-gradient(to left, #051352, #6270ee, #5f6ef1, #001aff);
   color: white;
 }
+
+.botao-reservado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to left, #520505, #f84040, #f84040, #520505);
+  color: white;
+  cursor: not-allowed;
+}
+
