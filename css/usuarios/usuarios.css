@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, rgba(0, 57, 243, 0.507), rgba(136, 138, 255, 0.856));
+  color: white;
+}
+
+.container-usuarios {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.usuario-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.usuario-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.usuario-card:hover {
+  transform: scale(1.05);
+}
+
+.usuario-list img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.usuario-card h2 {
+  margin: 0;
+  font-size: 24px;
+}

@@ -9,9 +9,9 @@
 @import "../css/home/carrosel-inicial.css";
 @import "../css/home/botaoMenu.css";
 
-
-
 @import "../css/cadastrar-livro/cadastrarLivro.css";
 @import "../css/cadastrar-livro/imagem.css";
 
-@import "../css/consultar-livro/consultar-livro.css"
+@import "../css/consultar-livro/consultar-livro.css";
+
+@import "../css/usuarios/usuarios.css";
