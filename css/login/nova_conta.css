@@ -1,58 +1,65 @@
-
-.card-tela {
-  background: rgba(226, 12, 12, 0.959); 
-  backdrop-filter: blur(2px);
+.card-criar {
+  backdrop-filter: blur(2000px);
   background: transparent;
-  overflow: hidden; 
-  max-width: 200px; 
+  overflow: hidden;
+  max-width: 800px; 
   width: 100%;
   top: 99px;
   position: absolute;
-  height: 300px;
+  height: 600px; 
   border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(250, 250, 250, 0.1);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
+.grid-nova {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
+.grid-1 {
+  grid-column: 1;
+}
+.grid-2{
+  grid-column: 2;
+}
 
-button {
-  background: #212020;
-  width: 80%;
+.card-criar .form-group input {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.form-group input[type="email"],
-.form-group input[type="password"]{
-  width: 80%;
-  padding: 20px 0 0 20px;
-  padding-bottom: 0px;
   margin-bottom: 5px;
   backdrop-filter: blur(2px);
   background: transparent;
-  margin-left: 5px;
+  border-radius: 5px;
+  border: 1px solid #acacac;
+  color: #eee;
 }
- 
-.card :not(h6), .botao {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 3px;
-  margin-top: 5px;
+.card-criar .form-group input{
+  width: 80%;
+  padding: 5px 0 0 20px;
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+  backdrop-filter: blur(2px);
+  background: transparent;
+  margin-left: 5px;
 }
 
 .card-tela :not(h2){
   margin-left: 8px;
 }
 
-.login {
+.nova-login {
+  display: flex;
+  justify-content: center;
   color: #2420f0;
   text-shadow: 
-    1px 1px 0 #031891,
+    1px 1px 0 #2c0be9,
     -1px 1px 0 #002fff,
-    1px -1px 0 #eeff00,
+    2px -2px 0 #f3f584,
     -1px -1px 0 #07c026;
 }
 
@@ -92,31 +99,16 @@ p{
   font-size: 9px;
 }
 
-
-
-.card-criar {
-
-  background: rgba(238, 57, 57, 0.582); 
-  backdrop-filter: blur(2000px);
-  background: transparent;
-  overflow: hidden; 
-  max-width: 200px; 
-  width: 100%;
-  top: 99px;
-  position: absolute;
-  height: 350px;
-  border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(250, 250, 250, 0.1);
+.ja_tem_conta a{
+  color: #39ca1d;
 }
-
-
 .nova-google{
   position: relative;
   display: flex;
-  bottom: -85px;
-  gap: 1px;
+  bottom: -75px;
+  gap: 10px;
   cursor: pointer;
-  left: 70px;
+  left: 320px;
 }
 
 .form-group {
@@ -125,7 +117,7 @@ p{
 }
 .form-group input {
   margin-left: -20px;
-  font-size: 10px;
+  font-size: 40px;
   border-radius: 5px;
   border: #acacac solid 1px;
   color: #eee;
@@ -148,70 +140,89 @@ p{
 .form-group input:focus ~ .form-label-login,
 .form-group input:not(:placeholder-shown) ~ .form-label {
   transform: translateY(-18px);
-  font-size: 10px;
+  font-size: 15px;
   color: #fff; 
   background-color: #463636;
 }
-.salvar_login{
-  display: flex;
-  bottom: 108px;
-  margin-left: 10px;
-}
-.check{
-  display: flex;
-  bottom: 108px;
-  margin-left: 15px;
 
-}
 .senha{
   display: flex;
   bottom: 108px;
 }
-.nao_tem_conta{
+.ja_tem_conta{
   display: flex;
-  bottom: 85px;
-  left: 10px;
-}
-.nao_tem_conta a{
-  color: #ff0404;
-  text-decoration: none;
- 
-
+  bottom: 150px;
+  left: 30px;
+  font-size: 16px;
 }
 
-.faca {
+.criar-conta {
+  display: flex;
+  bottom: 60px;
+  left: 320px;
+  font-size: 16px;
+}
+.ou-login-nova{
   position: absolute;
-  display: flex;
+  bottom: 90px;
+  color: #fff;
+ }
+ .ou-login-nova::before,
+ .ou-login-nova::after {
+   content: "";
+   display: inline-block;
+   width: 350px;
+   height: 0.3px;
+   background-color: #00ff95c2;
+ }
+ 
+ .ou-login-nova::after{
+   margin-left: 4px;
+ }
+ .ou-login-nova::before{
+   margin-right: 5px;
+ }
 
-  bottom: 35px;
-left: 57px;
-  cursor: pointer;
-}
-
-.ou-login{
- position: absolute;
- bottom: 60px;
- color: #fff;
- font-size: 10px;
-}
-.ou-login::before,
-.ou-login::after {
-  content: "";
-  display: inline-block;
-  width: 80px;
-  height: 0.3px;
-  background-color: #eee;
-  bottom: 30px;
-}
-
-.ou-login::after{
-  margin-left: 4px;
-}
-.ou-login::before{
-  margin-right: 5px;
-}
 .card-criar.hidden {
   display: none; 
 }
 
+.salvar_login-nova {
+  display: flex;
+  bottom: 190px;
+  left: 55px;
+  font-size: 16px;
+}
 
+.card-criar .check {
+  display: flex;
+  top: 3px;
+  left: 10px;
+  width: 20px;
+  height: 20px; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  border: 2px solid #ff9100;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-criar .check:checked {
+  background-color: #4CAF50; /* Cor do fundo quando marcado */
+  border-color: #4CAF50;
+}
+
+.card-criar .check:checked::after {
+  content: "";
+  position: absolute; /* Adicionei a posição absoluta para o pseudo-elemento */
+  top: 3px;
+  left: 7px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

@@ -1,6 +1,6 @@
 
-.container {
-  background:linear-gradient(to bottom, rgba(21, 75, 253, 0.507), rgba(136, 138, 255, 0.568));
+.container-login {
+  background: linear-gradient(to bottom, rgba(74, 27, 247, 0.507), rgba(136, 138, 255, 0.856));
   background-size: cover;
   background-position: center;
   display: flex;
@@ -8,19 +8,19 @@
   align-items: center;
   height: 100vh;
   position: relative;
+  font-size: 30px;
 }
 
 
 .card-tela-login {
-  background: rgba(9, 6, 240, 0.137); 
+  background: linear-gradient(to bottom, rgba(0, 16, 243, 0.507), rgba(136, 138, 255, 0.856));
   backdrop-filter: blur(2000px);
   background: transparent;
   overflow: hidden; 
-  max-width: 200px; 
+  max-width: 500px; 
   width: 100%;
-  top: 99px;
-  position: absolute;
-  height: 300px;
+  position: relative;
+  height: 500px; 
   border-radius: 10px;
   box-shadow: 0 0 0 1px rgba(250, 250, 250, 0.1);
 }
@@ -39,14 +39,14 @@ button {
 .form-group-login input[type="email"],
 .form-group-login input[type="password"]{
   width: 80%;
-  padding: 20px 0 0 20px;
+  padding: 5px 0 0 20px;
   padding-bottom: 0px;
   margin-bottom: 5px;
   backdrop-filter: blur(2px);
   background: transparent;
 }
  
-.card-login :not(h6), .botao {
+.card-tela-login .card-login :not(h6), .botao {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,12 +70,11 @@ p{
   bottom: 41px;
   left: 25px;
   color: #ffffff;
-  font-size: 9px;
+  font-size: 29px;
 }
 .senha{
-  position: absolute;
   color: #ccc;
-  bottom: 41px;
+  bottom: 411px;
   right: 10px;
   font-size: 9px;
 }
@@ -83,7 +82,6 @@ p{
 
 
 .card-criar {
-
   background: rgba(238, 57, 57, 0.582); 
   backdrop-filter: blur(2px);
   background: transparent;
@@ -111,8 +109,8 @@ p{
   margin: 3px 0;
 }
 .form-group-login input {
-  margin-left: -15px;
-  font-size: 10px;
+  margin-left: -40px;
+  font-size: 40px;
   border-radius: 5px;
   border: #acacac solid 1px;
   color: #eee;
@@ -121,9 +119,9 @@ p{
 .form-label-login {
   position: absolute;
   top: 10px;
-  font-size: 10px;
+  font-size: 20px;
   color: #acacac;
-  left: 10px;
+  left: 30px;
   pointer-events: none;
   transition: 0.15s all ease;
 }
@@ -135,28 +133,32 @@ p{
 .form-group-login input:focus ~ .form-label-login,
 .form-group-login input:not(:placeholder-shown) ~ .form-label-login {
   transform: translateY(-18px);
-  font-size: 10px;
+  font-size: 15px;
   color: #fff; 
   background-color: #463636;
 }
-.salvar_login{
+.salvar_login {
   display: flex;
-  bottom: 108px;
+  top: 38px;
+  left: 33px;
+  font-size: 15px;
 }
-.senha{
-  display: flex;
-  bottom: 108px;
-}
-.nao_tem_conta{
-  display: flex;
-  bottom: 85px;
-  left: 10px;
-}
-.nao_tem_conta a{
-  color: #ff0404;
-  text-decoration: none;
- 
 
+.senha {
+ position: absolute;
+  top: 105px; 
+  font-size: 25px;
+}
+
+.nao_tem_conta {
+  display: flex;
+  top: 300px; 
+  left: 20px; 
+  font-size: 14px; 
+}
+
+.nao_tem_conta a{
+  color: #39ca1d;
 }
 .login-google-1{
   position: absolute;
@@ -166,31 +168,29 @@ p{
   bottom: 0px;
   gap: 1px;
   cursor: pointer;
-  left: 50px;
+  left: 180px;
 }
 .faca-login {
   position: absolute;
   display: flex;
-
-  bottom: 35px;
-  left: 57px;
+  top: 400px;
+  left: 170px;
   cursor: pointer;
+  font-size: 20px;
 }
 
 .ou-login{
  position: absolute;
- bottom: 60px;
+ top: 360px;
  color: #fff;
- font-size: 10px;
 }
 .ou-login::before,
 .ou-login::after {
   content: "";
   display: inline-block;
-  width: 80px;
+  width: 220px;
   height: 0.3px;
-  background-color: #eee;
-  bottom: 30px;
+  background-color: #00ff95c2;
 }
 
 .ou-login::after{
@@ -203,4 +203,45 @@ p{
   display: none; 
 }
 
+.login {
+  display: flex;
+  justify-content: center;
+  color: #2420f0;
+  text-shadow: 
+    1px 1px 0 #2c0be9,
+    -1px 1px 0 #002fff,
+    2px -2px 0 #f3f584,
+    -1px -1px 0 #07c026;
+}
 
+
+.check {
+  display: flex;
+  top: -3px;
+  width: 20px;
+  height: 20px; 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #ffffff;
+  border: 2px solid #ff9100;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+.check:checked {
+  background-color: #4CAF50; /* Cor do fundo quando marcado */
+  border-color: #4CAF50;
+}
+
+.check:checked::after {
+  content: "";
+  top: 3px;
+  left: 7px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
