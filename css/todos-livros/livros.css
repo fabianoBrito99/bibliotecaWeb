@@ -1,0 +1,46 @@
+.container-todos-livros {
+  display: flex;
+  flex-direction: column; /* Organiza os cards em uma coluna */
+  align-items: center; /* Centraliza os cards horizontalmente */
+}
+
+.livros-section {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards quebrem para a linha de baixo */
+  gap: 16px; /* Espaço entre os cards */
+  width: 100%; /* Garante que a seção ocupe 100% do espaço disponível */
+  justify-content: center; /* Centraliza os cards */
+}
+
+.card-todos-livros {
+  background: linear-gradient(to bottom, rgb(6, 0, 32), rgb(17, 2, 2));
+  width: 100%; /* Faz com que o card ocupe 100% da largura disponível */
+  max-width: 280px; /* Limita a largura máxima do card */
+  height: 400px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 10px rgb(53, 40, 40);
+  transition: transform 0.2s ease-in-out;
+  margin: 0 auto; /* Centraliza os cards */
+}
+
+.card-todos-livros img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 25px;
+}
+
+.card-todos-livros h2, .card-todos-livros h6 {
+  color: aliceblue;
+  font-size: 14px; /* Aumentei um pouco o tamanho da fonte */
+  margin: 10px 0; /* Adicionei margem para espaçamento */
+}
+
+.card-todos-livros h6 {
+  color: rgb(202, 202, 202);
+  font-weight: 100;
+  font-size: 12px;
+}

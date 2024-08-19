@@ -3,6 +3,7 @@ const cors = require('cors');
 const path = require('path');
 const livrosRouter = require('./routes/livros.routes');
 const usuariosRouter = require('./routes/usuarios.routes');
+const emprestimosRouter = require('./routes/emprestimos.router');
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(livrosRouter);
 
 // Usar rotas de usuários com prefixo '/api/usuarios'
 app.use('/api', usuariosRouter);
+app.use('/api', emprestimosRouter);
 
 const PORT = 4000;
 app.listen(PORT, () => {

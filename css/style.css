@@ -11,7 +11,10 @@
 
 @import "../css/cadastrar-livro/cadastrarLivro.css";
 @import "../css/cadastrar-livro/imagem.css";
+@import "../css/todos-livros/livros.css";
 
 @import "../css/consultar-livro/consultar-livro.css";
 
 @import "../css/usuarios/usuarios.css";
+
+@import "../css/emprestimos/emprestimos.css";

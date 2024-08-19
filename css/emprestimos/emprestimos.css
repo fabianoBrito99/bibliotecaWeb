@@ -1,0 +1,94 @@
+/* Estilo para o container dos empréstimos */
+#emprestimos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Estilo para cada cartão de empréstimo */
+.emprestimo-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 1500px;
+  position: relative;
+  display: grid;
+  top: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px; /* Espaçamento entre as colunas */
+  align-items: center; /* Alinha todos os itens no centro verticalmente */
+}
+
+/* Cores para bordas baseadas no estado do empréstimo */
+.green {
+  border: 2px solid green;
+}
+
+.yellow {
+  border: 2px solid yellow;
+}
+
+.red {
+  border: 2px solid red;
+}
+
+/* Estilo para o título que ocupa toda a largura do cartão */
+.emprestimo-card h2 {
+  font-size: 1.5em;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  grid-column: 1 / span 4; /* Faz o título ocupar a largura total */
+}
+
+/* Estilo para os parágrafos dentro dos cartões */
+.emprestimo-card p {
+  margin: 0; /* Remove margens dos parágrafos */
+  font-size: 1em;
+  color: rgb(0, 0, 0);
+}
+
+/* Alinhamento específico de cada item na grid */
+.usuario-emprestimo {
+  grid-column: 1;
+  color: black;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.livro-emprestimo {
+  grid-column: 2;
+  position: relative;
+  left: 50px;
+  top: 50px;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.data_devolucao-emprestimo {
+  grid-column: 3;
+  position: relative;
+  left: 40px;
+  top: 50px;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.dias_restantes-emprestimo {
+  grid-column: 4;
+  position: relative;
+  left: 20px;
+  top: 50px;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.lista-emprestimo {
+  position: relative;
+  display: flex;
+  top: 60px; 
+  align-items: center;
+  justify-content: center;
+  }
+  
+
