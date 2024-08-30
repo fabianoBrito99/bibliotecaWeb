@@ -6,7 +6,7 @@
 }
 
 .section-carrosel-categorias .swiper-button-next,
-.section-carrosel-categorias .swiper-button-prev {
+.section-carrosel-categorias .swiper-button-prev  {
   color: #fff;
   width: 40px;
   height: 40px;
@@ -16,6 +16,7 @@
   justify-content: center;
   z-index: 10;
 }
+
 
 .section-carrosel-categorias .swiper-pagination {
   bottom: 10px;
@@ -45,15 +46,15 @@
   border-radius: 10px;
   text-align: center;
   box-sizing: border-box;
-  box-shadow: 2px 2px 10px rgb(53, 40, 40);
+  box-shadow: 0 10px 10px rgb(12, 8, 8);
   transition: transform 0.2s ease-in-out;
-  margin: 0; /* Remover margens adicionais */
+  margin: 0; 
 
 }
 
 .card-livro img {
-  width: 150px; /* Ajustar imagem para ocupar o espaço do card */
-  height: auto; /* Manter a proporção da imagem */
+  width: 150px; 
+  height: auto; 
   border-radius: 8px;
   margin-top: 25px;
 }
@@ -64,10 +65,10 @@
   margin: 0;
 }
 
-.card-livro h6 {
+.card-livro h4 {
   color: rgb(202, 202, 202);
   font-weight: 100;
-  font-size: 10px;
+  font-size: 15px;
   margin: 0;
 }
 

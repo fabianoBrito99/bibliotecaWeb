@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column; /* Organiza os cards em uma coluna */
   align-items: center; /* Centraliza os cards horizontalmente */
+  padding-top: 80px;
 }
 
 .livros-section {
@@ -43,4 +44,12 @@
   color: rgb(202, 202, 202);
   font-weight: 100;
   font-size: 12px;
+}
+
+.todos-livros{
+ position: relative;
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50px;
 }

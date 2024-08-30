@@ -46,3 +46,25 @@
   background: linear-gradient(to left, rgb(94, 184, 245), rgb(255, 231, 231));
   box-shadow: 0 0 0 4px rgba(28, 2, 46, 0.1);
 }
+
+.sugestoes-container {
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #4bdbe6;
+  position: absolute;
+  z-index: 1000;
+  width:510px; 
+  top: 45px;
+  right: 80px;
+  border-radius: 10px;
+
+}
+
+.sugestao-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sugestao-item:hover {
+  background-color: #f0f0f0;
+}

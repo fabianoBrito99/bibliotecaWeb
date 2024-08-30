@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./icones/livro.png" type="image/x-icon" />
   <title>Detalhes do Livro</title>
   <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
@@ -17,7 +18,7 @@
         <h1 id="livro-nome">Nome do Livro</h1>
         <h2 id="livro-autor">Autor</h2>
         <h2 id="livro-categoria">Categoria</h2>
-        <h6 id="livro-descricao" class="descricao"></h6>
+        <h6 id="livro-descricao" class="descricao-livro"></h6>
         <div class="botao-reservar-pos">
           <button id="botao-reservar" class="botao-reservar">Reservar</button>
         </div>
@@ -25,54 +26,6 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const livroId = urlParams.get('id');
-
-      if (livroId) {
-        fetch(`http://localhost:4000/livro/${livroId}`)
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-          })
-          .then(data => {
-            if (data.erro) {
-              alert(data.erro);
-              return;
-            }
-
-            const capa = document.getElementById('livro-capa');
-            const nome = document.getElementById('livro-nome');
-            const descricao = document.getElementById('livro-descricao');
-            const autor = document.getElementById('livro-autor');
-            const categoria = document.getElementById('livro-categoria');
-            const botaoReservar = document.getElementById('botao-reservar');
-
-            if (capa) capa.src = data.foto_capa;
-            if (nome) nome.textContent = data.nome_livro;
-            if (descricao) descricao.textContent = data.descricao;
-            if (autor) autor.textContent = `Autor: ${data.autor}`;
-            if (categoria) categoria.textContent = `Categoria: ${data.categoria}`;
-
-            if (data.status1 === 'reservado') {
-              botaoReservar.classList.add('botao-reservado');
-              botaoReservar.classList.remove('botao-reservar');
-              botaoReservar.textContent = 'Reservado';
-              botaoReservar.disabled = true;
-              botaoReservar.title = 'Este livro já está reservado.';
-            }
-          })
-          .catch(error => {
-            console.error('Erro ao buscar dados do livro:', error);
-            alert('Erro ao buscar dados do livro: ' + error.message);
-          });
-      } else {
-        alert('ID do livro não fornecido na URL.');
-      }
-    });
-  </script>
+  <script src="./js/consultar-livro.js""> </script>
 </body>
 </html>

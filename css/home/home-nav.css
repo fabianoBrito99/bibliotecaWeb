@@ -13,7 +13,7 @@
   width: 180px;
   position: fixed;
   left: 0;
-  z-index: 4;
+  z-index: 99999;
   transition: height 0.5s ease;
   overflow: hidden;
   border-radius: 0 0 70px 0;
@@ -81,4 +81,15 @@
   right: 10px;
   border-radius: 50%;
   top: 5px;
+}
+
+
+
+.nav-hover .menu-content li:hover {
+  background:linear-gradient(to left, rgba(118, 150, 255, 0.801), rgba(255, 255, 255, 0.938));;
+  padding: 10px;
+  margin: 0;
+  color: rgb(55, 69, 82);
+  border-radius: 5px;
+  border: 1px solid rgb(0, 136, 255);
 }

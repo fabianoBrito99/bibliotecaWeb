@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.querySelector('.menu-content li:nth-child(3)').addEventListener('click', function() {
-    window.location.href = '/emprestimo.html'; // URL da página de empréstimos
+    window.location.href = '/emprestimoS.html'; // URL da página de empréstimos
   });
 
   document.querySelector('.menu-content li:nth-child(4)').addEventListener('click', function() {
@@ -37,10 +37,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.querySelector('.menu-content li:nth-child(5)').addEventListener('click', function() {
-    window.location.href = '/pagina-cadastrar-usuario'; // URL da página de cadastro de usuários
+    window.location.href = '/home.html'; // URL da página de cadastro de usuários
   });
 
   document.querySelector('.menu-content li:nth-child(6)').addEventListener('click', function() {
     window.location.href = '/index.html';
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const menu = document.querySelector('.menu-3-pontinhos');
+  
+  menu.addEventListener('click', function() {
+    menu.classList.toggle('rotated');
   });
 });

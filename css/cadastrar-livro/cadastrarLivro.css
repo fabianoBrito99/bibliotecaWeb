@@ -13,7 +13,7 @@
   backdrop-filter: blur(2000px);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(207, 204, 204, 0.5);
+  box-shadow: 0 25px 30px rgba(38, 26, 80, 0.781);
   max-width: 800px;
   width: 100%;
 }
@@ -72,9 +72,6 @@ input[type="text"] {
   margin-bottom: 5px;
 }
 
-.descricao {
-  height: 100px;
-}
 
 .cadastrar-livro {
   color: #2420f0;
@@ -126,4 +123,38 @@ form#uploadForm {
 .botao-enviar-img:hover {
   background-image:linear-gradient(to left, #00ffc8, #2f44fa, #2f44fa,#00ffc8);
   color: white;
+}
+
+.quant{
+  border-radius: 10px;
+  padding: 10px;
+  width: 110px;
+  border: none;
+  border: 2px solid #08a5b9;
+}
+
+.descricao {
+  display: block;
+  height: 300px;
+  width: 335px;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  resize: none; /* Impede o usuário de redimensionar o textarea */
+  margin: 5px;
+  background: transparent;
+  border: 1px solid #92a3a0;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem;
+}
+
+
+
+.form-label-CL-descricao{
+  color: #c0b5b5;
+  position: absolute;
+  top: -15px;
+  left: 5px;
 }

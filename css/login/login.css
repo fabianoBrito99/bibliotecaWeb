@@ -22,7 +22,7 @@
   position: relative;
   height: 500px; 
   border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(250, 250, 250, 0.1);
+  box-shadow: 0 25px 30px rgba(32, 3, 134, 0.781);
 }
 
 
@@ -91,6 +91,7 @@ p{
   top: 99px;
   position: absolute;
   height: 350px;
+  box-shadow: 0 25px 30px rgba(38, 26, 80, 0.781);
 }
 
 

@@ -8,7 +8,7 @@
 
 /* Estilo para cada cartão de empréstimo */
 .emprestimo-card {
-  background: #fff;
+  background: linear-gradient(to bottom, rgba(65, 109, 255, 0.171), rgba(151, 153, 252, 0.178));
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
@@ -17,10 +17,14 @@
   max-width: 1500px;
   position: relative;
   display: grid;
-  top: 20px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 10px; /* Espaçamento entre as colunas */
-  align-items: center; /* Alinha todos os itens no centro verticalmente */
+  top: 40px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px; 
+  align-items: center; 
+  cursor: pointer;
+}
+.emprestimo-card:nth-child(even) {
+  background: linear-gradient(to bottom, rgba(151, 153, 252, 0.336), rgba(65, 109, 255, 0.226)); /* Outra cor para os cards pares */
 }
 
 /* Cores para bordas baseadas no estado do empréstimo */
@@ -53,34 +57,30 @@
 }
 
 /* Alinhamento específico de cada item na grid */
-.usuario-emprestimo {
+.foto-livro{
   grid-column: 1;
+}
+.usuario-emprestimo {
+  grid-column: 2;
   color: black;
-  text-align: left; /* Alinha o texto à esquerda */
+  position: relative;
+  left: -80px;
+  text-align: left;
 }
 
 .livro-emprestimo {
-  grid-column: 2;
-  position: relative;
-  left: 50px;
-  top: 50px;
-  text-align: left; /* Alinha o texto à esquerda */
+  grid-column: 3;
+  text-align: left; 
 }
 
 .data_devolucao-emprestimo {
-  grid-column: 3;
-  position: relative;
-  left: 40px;
-  top: 50px;
-  text-align: left; /* Alinha o texto à esquerda */
+  grid-column: 4;
+  text-align: left;
 }
 
 .dias_restantes-emprestimo {
-  grid-column: 4;
-  position: relative;
-  left: 20px;
-  top: 50px;
-  text-align: left; /* Alinha o texto à esquerda */
+  grid-column: 5;
+  text-align: left; 
 }
 
 .lista-emprestimo {

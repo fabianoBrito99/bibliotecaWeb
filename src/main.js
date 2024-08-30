@@ -1,7 +1,9 @@
+// main.js
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const livrosRouter = require('./routes/livros.routes');
+// Importar rotas para usuários e empréstimos conforme necessário
 const usuariosRouter = require('./routes/usuarios.routes');
 const emprestimosRouter = require('./routes/emprestimos.router');
 
@@ -13,15 +15,12 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
-// Middleware para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Usar rotas de livros com prefixo '/api/livros'
 app.use(livrosRouter);
-
-// Usar rotas de usuários com prefixo '/api/usuarios'
 app.use('/api', usuariosRouter);
 app.use('/api', emprestimosRouter);
 

@@ -84,7 +84,7 @@ function criarCardLivro(livro) {
   cardLivro.setAttribute("data-id", livro.id);
 
   const img = document.createElement("img");
-  img.src = livro.foto_capa;
+  img.src = livro.foto_capa;  // Agora deve funcionar corretamente
   img.alt = livro.nome_livro;
   cardLivro.appendChild(img);
 
@@ -92,7 +92,7 @@ function criarCardLivro(livro) {
   titulo.textContent = livro.nome_livro;
   cardLivro.appendChild(titulo);
 
-  const autor = document.createElement("h6");
+  const autor = document.createElement("h4");
   autor.textContent = `Autor: ${livro.autor}`;
   cardLivro.appendChild(autor);
 

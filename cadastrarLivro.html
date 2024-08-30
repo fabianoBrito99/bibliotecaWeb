@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./icones/cadastrar-icone.png" type="image/x-icon" />
   <title>Cadastrar Livro</title>
-  <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
   <nav class="nav-menu">
     <div class="nav-100">
-      <img class="perfil" src="./img/perfil.jpg" alt="Perfil" width="40px" height="40px">
-      <div class="InputContainer1">
-        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
-          <g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g>
-        </svg>
-        <input placeholder="Pesquisar.." id="input" class="input" name="text" type="text">
-      </div>
+      <img class="perfil" src="./img/perfil.jpg" alt="Perfil" width="40px" height="40px" />
+      
     </div>
-    <ul>
-      <li><img id="home-icon" src="./img/home.png" alt="Home" width="30" height="30"></li>
+    <ul class="nav-hover">
+      <li>
+        <li><img class="menu-3-pontinhos" id="home-icon" src="./icones/3pontinhos.png" alt="Home" width="30" height="30"></li>
+      </li>
       <div class="menu-content">
-        <li class="nav-item"><img src="./img/livros.png" alt="" width="20" height="20"> Livros</li>
-        <li class="nav-item"><img src="./img/livro.png" alt="" width="20" height="20"> Cadastrar Livro</li>
-        <li class="nav-item"><img src="./img/empr-livro.png" alt="" width="20" height="20"> Empréstimos</li>
-        <li class="nav-item"><img src="./img/users.png" alt="" width="20" height="20"> Usuários</li>
-        <li class="nav-item"><img src="./img/user.png" alt="" width="20" height="20"> Cadastrar Usuário</li>
-        <li class="nav-item sair"><img src="./img/sair.png" alt="" width="20" height="20"> Sair</li>
+        <li class="nav-item">
+          <img src="./img/livros.png" alt="" width="20" height="20" /> Livros
+        </li>
+        <li class="nav-item">
+          <img src="./img/livro.png" alt="" width="20" height="20" /> Cadastrar Livro
+        </li>
+        <li class="nav-item">
+          <img src="./img/empr-livro.png" alt="" width="20" height="20" /> Empréstimos
+        </li>
+        <li class="nav-item">
+          <img src="./img/users.png" alt="" width="20" height="20" /> Usuários
+        </li>
+        <li class="nav-item">
+          <img src="./img/home.png" alt="" width="20" height="20" /> home
+        </li>
+        <li class="nav-item sair">
+          <img src="./img/sair.png" alt="" width="20" height="20" /> Sair
+        </li>
       </div>
     </ul>
     <button id="close-menu"></button>
   </nav>
-  <div class="container-cl">  
+  <div class="container-cl">
     <div class="card-novaConta">
       <h2 class="cadastrar-livro">Cadastrar Livro</h2>
       <form id="livroForm">
@@ -46,21 +56,27 @@
               <label class="form-label-CL">Autor</label>
             </div>
             <div class="form-group-CL">
-              <input type="text" name="categoria" placeholder="Categoria" required />
+              <input type="text" name="categoria" placeholder="Categoria" list="listCategories" required />
               <label class="form-label-CL">Categoria</label>
+              <datalist id="listCategories"></datalist>
             </div>
             <div class="form-group-CL">
-              <input class="descricao" type="text" name="descricao" placeholder="Descrição" required />
-              <label class="form-label-CL">Descrição</label>
+              <label class="form-label-CL-descricao">Descrição</label>
+              <textarea class="descricao" name="descricao" placeholder="Descrição" required></textarea>
             </div>
           </div>
           <div class="form-media">
             <h2>Imagem da capa do livro</h2>
-            <form id="uploadForm" enctype="multipart/form-data">
-              <input type="file" name="imagem_capa" id="imagem_capa">
-              <br><br>
-              <input class="botao-enviar-img" type="submit" value="Enviar Imagem">
-            </form>
+            <label for="imagem_capa" class="upload-label">
+              <img class="img-cad" src="./img/image.png" alt="Pré-visualização da Capa" />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="24" height="24" stroke="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+              </svg>
+              Escolha uma imagem
+            </label>
+            <input type="file" name="imagem_capa" id="imagem_capa" style="display: none;" />
+            <br /><br />
+            <input class="quant" type="number" name="quantidade" placeholder="Quantidade" required />
             <div class="form-group-CL">
               <button class="botao" type="submit">Salvar</button>
             </div>
@@ -70,6 +86,6 @@
     </div>
   </div>
   <script src="./js/script-cadastrar-livro.js"></script>
-  <script src="./js/script-menu-lateral.js"></script>  
+  <script src="./js/script-menu-lateral.js"></script>
 </body>
 </html>

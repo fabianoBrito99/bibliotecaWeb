@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./icones/user.png" type="image/x-icon" />
     <title>Login</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,23 +77,15 @@
           <div class="grid-nova">
             <div class="grid-1">
               <div class="form-group">
-                <input
-                  id="register-email"
-                  type="email"
-                  name="email"
-                  placeholder="Email ou login"
-                  required
-                />
+                <input type="text" id="register-nome" name="nome_login" placeholder="Nome de Login" required />
+                <label class="form-label">Nome de Login</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="register-email" name="email" placeholder="Email" required />
                 <label class="form-label">Email</label>
               </div>
               <div class="form-group">
-                <input
-                  id="register-senha"
-                  type="password"
-                  name="senha"
-                  placeholder="Senha"
-                  required
-                />
+                <input type="password" id="register-senha" name="senha" placeholder="Senha" required />
                 <label class="form-label">Senha</label>
               </div>
               <div class="form-group">
@@ -105,40 +98,30 @@
                 <label class="form-label">Confirme Senha</label>
               </div>
               <div class="form-group">
-                <input
-                  type="phone"
-                  name="Telefone"
-                  placeholder="Telefone"
-                  required
-                />
+                <input type="text" id="telefone" name="Telefone" placeholder="Telefone" />
                 <label class="form-label">Telefone</label>
               </div>
             </div>
             <div class="grid-2">
               <div class="form-group">
-                <input
-                  type="text"
-                  name="igreja"
-                  placeholder="igreja"
-                  required
-                />
+                <input type="text" id="igrejaLocal" name="igreja" placeholder="Igreja Local" />
                 <label class="form-label">Igreja Local</label>
               </div>
+              <h6 class="enderco">Seu Endereço</h6>
               <div class="form-group">
-                <input type="text" name="rua" placeholder="rua" required />
+                <input type="text" id="cep" name="cep" placeholder="CEP" required />
+                <label class="form-label">CEP</label>
+              </div>
+              <div class="form-group">
+                <input type="text" id="rua" name="rua" placeholder="Rua" required />
                 <label class="form-label">Rua</label>
               </div>
               <div class="form-group">
-                <input
-                  type="text"
-                  name="numero"
-                  placeholder="numero"
-                  required
-                />
+                <input type="text" id="numero" name="numero" placeholder="Número" required />
                 <label class="form-label">Número</label>
               </div>
               <div class="form-group">
-                <input type="" name="Bairro" placeholder="Bairro" required />
+                <input type="text" id="bairro" name="Bairro" placeholder="Bairro" required />
                 <label class="form-label">Bairro</label>
               </div>
             </div>

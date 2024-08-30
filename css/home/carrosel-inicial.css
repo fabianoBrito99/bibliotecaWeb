@@ -9,6 +9,7 @@
 .section-carrosel-inicial {
   position: relative;
   width: 100%;
+  top: 20px;
   min-height: 70vh;
   display: flex;
   overflow: hidden;

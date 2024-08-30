@@ -6,9 +6,9 @@
   width: 100%;
   top: 99px;
   position: absolute;
-  height: 600px; 
+  height: 697px; 
   border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(250, 250, 250, 0.1);
+  box-shadow: 0 25px 30px rgba(32, 3, 134, 0.781);
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
@@ -225,4 +225,12 @@ p{
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+.endereco{
+  display: flex;
+  position: relative;
+  left: 80px;
+  padding-bottom: 10px;
+  color: #f8e3e3;
 }

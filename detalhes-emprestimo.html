@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./icones/empr-livro.png" type="image/x-icon" />
+  <title>Detalhes do Empréstimo</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="det-emprestimos">Detalhes do Empréstimo</h1>
+    <div id="detalhes-emprestimo-container">
+      <!-- Os detalhes do empréstimo serão carregados aqui -->
+    </div>
+    <button id="btn-devolver-livro">Devolver Livro</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const idEmprestimo = urlParams.get('id');
+
+      function carregarDetalhesEmprestimo(id) {
+        fetch(`http://localhost:4000/api/emprestimos/${id}`)
+          .then(response => response.json())
+          .then(data => renderizarDetalhesEmprestimo(data))
+          .catch(error => console.error('Erro ao carregar os detalhes do empréstimo:', error));
+      }
+
+      function renderizarDetalhesEmprestimo(responseData) {
+  const emprestimo = responseData.dados;
+  const container = document.getElementById('detalhes-emprestimo-container');
+  
+  container.innerHTML = `
+    <div class="grid-container">
+      <div class="grid-1-emprestismo">
+        <img src="${emprestimo.foto_capa}" alt="Capa do Livro" style="max-width: 200px;">
+      </div>
+      <div class="grid-2-emprestismo">
+        <h1><strong>Usuário:</strong> ${emprestimo.nome_usuario}</h1>
+        <h2><strong>Livro:</strong> ${emprestimo.nome_livro}</h2>
+        <h4><strong>Data de Empréstimo:</strong> ${new Date(emprestimo.data_emprestimo).toLocaleDateString('pt-BR')}</h4>
+        <h4><strong>Data de Devolução:</strong> ${emprestimo.devolucao ? new Date(emprestimo.devolucao).toLocaleDateString('pt-BR') : 'Ainda não devolvido'}</h4>
+      </div>
+    </div>
+  `;
+}
+
+      document.getElementById('btn-devolver-livro').addEventListener('click', function() {
+        fetch(`http://localhost:4000/api/emprestimos/${idEmprestimo}/devolver`, {
+          method: 'PUT'
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Livro devolvido com sucesso!');
+            window.location.href = 'emprestimos.html';
+          } else {
+            alert('Erro ao devolver o livro.');
+          }
+        })
+        .catch(error => console.error('Erro ao devolver o livro:', error));
+      });
+
+      carregarDetalhesEmprestimo(idEmprestimo);
+    });
+  </script>
+</body>
+</html>

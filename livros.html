@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./icones/pilha-de-livros.png" type="image/x-icon" />
     <title>Livros</title>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -17,20 +18,20 @@
           <input placeholder="Pesquisar.." id="input" class="input" name="text" type="text">
         </div>
       </div>
-      <ul>
-        <li><img id="home-icon" src="./img/home.png" alt="Home" width="30" height="30"></li>
+      <ul class="nav-hover">
+        <li><img class="menu-3-pontinhos" id="home-icon" src="./icones/3pontinhos.png" alt="Home" width="30" height="30"></li>
         <div class="menu-content">
           <li class="nav-item"><img src="./img/livros.png" alt="" width="20" height="20"> Livros</li>
           <li class="nav-item"><img src="./img/livro.png" alt="" width="20" height="20"> Cadastrar Livro</li>
           <li class="nav-item"><img src="./img/empr-livro.png" alt="" width="20" height="20"> Empréstimos</li>
           <li class="nav-item"><img src="./img/users.png" alt="" width="20" height="20"> Usuários</li>
-          <li class="nav-item"><img src="./img/user.png" alt="" width="20" height="20"> Cadastrar Usuário</li>
+          <li class="nav-item"><img src="./img/home.png" alt="" width="20" height="20"> home</li>
           <li class="nav-item sair"><img src="./img/sair.png" alt="" width="20" height="20"> Sair</li>
         </div>
       </ul>
       <button id="close-menu"></button>
     </nav>
-
+    <h1 class="todos-livros">Lista de Todos os livros</h1>
     <div class="container-todos-livros">
       <section id="livros-section" class="livros-section">
         <!-- Os livros serão listados aqui pelo script -->
